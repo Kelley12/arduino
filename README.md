@@ -8,7 +8,8 @@ Learning arduino with sample projects
 - led_motion - LED Motion Dectection.
 - led_relay - Functions for using a relay to switch between two LEDs using a button.
 - motor_throttle - Functions for running a motor. Main function is using a potentiometer as a throttle.
+- servo_test - Function for testing the functionality of a servo
 
 ## Requirements
-- [Arduino](https://www.arduino.cc/en/main/software) - [Source](https://github.com/arduino/Arduino)
+- [Arduino](https://www.arduino.cc/en/main/software) - [Source code](https://github.com/arduino/Arduino)
 - [Fritzing](http://fritzing.org/download/)
