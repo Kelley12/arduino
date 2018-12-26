@@ -160,7 +160,7 @@ void checkTestButton()
     if(ledsOn)
     {
       melody();
-    }//Amalfi Coast, Italy
+    }
   }
   lastButton = currentButton;
   for (int i=0; i<6; i++)
