@@ -10,6 +10,7 @@ Learning arduino with sample projects
 - led_photo - LED PWD using a photo resistor.
 - motor_throttle - Functions for running a motor. Main function is using a potentiometer as a throttle.
 - servo_test - Function for testing the functionality of a servo
+- temp - Function for reading tempurature from a temperature sensor and writing it to the serial monitor window
 
 ## Requirements
 - [Arduino](https://www.arduino.cc/en/main/software) - [Source code](https://github.com/arduino/Arduino)
