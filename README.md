@@ -12,6 +12,7 @@ Learning arduino with sample projects
 - servo_test - Function for testing the functionality of a servo
 - temp - Function for reading tempurature from a temperature sensor and writing it to the serial monitor window
 - keypad_test - Functions for testing and configuring a 4x4 matrix keypad
+- lcd - Functions for testing and configuring an LCD screen
 
 ## Requirements
 - [Arduino](https://www.arduino.cc/en/main/software) - [Source code](https://github.com/arduino/Arduino)
