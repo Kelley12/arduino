@@ -13,6 +13,7 @@ Learning arduino with sample projects
 - temp - Function for reading tempurature from a temperature sensor and writing it to the serial monitor window
 - keypad_test - Functions for testing and configuring a 4x4 matrix keypad
 - lcd - Functions for testing and configuring an LCD screen
+- shift_register - Functions for using a shift register to control more outputs with less pins
 
 ## Requirements
 - [Arduino](https://www.arduino.cc/en/main/software) - [Source code](https://github.com/arduino/Arduino)
