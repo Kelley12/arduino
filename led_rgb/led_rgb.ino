@@ -2,16 +2,16 @@
 RGB LED
 
   Make an RGB LED display a rainbow of colors!
-  
+
 Hardware connections:
 
-  An RGB LED is actually three LEDs (red, green, and blue) in one package. When 
+  An RGB LED is actually three LEDs (red, green, and blue) in one package. When
   you run them at different brightnesses, the red, green and blue mix to form new colors.
-  
+
   Starting at the flattened edge of the flange on the LED,
   the pins are ordered RED, COMMON, GREEN, BLUE.
-  
-  Connect RED to a 330 Ohm resistor. Connect the other end of the resistor to Arduino 
+
+  Connect RED to a 330 Ohm resistor. Connect the other end of the resistor to Arduino
   digital pin 9.
 
   Connect COMMON pin to GND.
@@ -25,9 +25,9 @@ Hardware connections:
 
 // First we'll define the pins by name to make the sketch easier to follow.
 
-// Here's a new trick: putting the word "const" in front of a variable indicates that 
-// this is a "constant" value that will never change. (You don't have to do this, but 
-// if you do, the Arduino will give you a friendly warning if you accidentally try to 
+// Here's a new trick: putting the word "const" in front of a variable indicates that
+// this is a "constant" value that will never change. (You don't have to do this, but
+// if you do, the Arduino will give you a friendly warning if you accidentally try to
 // change the value, so it's considered good form.)
 
 const int RED_PIN = 9;
@@ -48,29 +48,29 @@ void setup()
 
 void loop()
 {
-  // In this sketch, we'll start writing our own functions. This makes the sketch easier 
-  // to follow by dividing up the sketch into sections, and not having everything in 
+  // In this sketch, we'll start writing our own functions. This makes the sketch easier
+  // to follow by dividing up the sketch into sections, and not having everything in
   // setup() or loop().
 
   // We'll show you two ways to run the RGB LED.
 
-  // The first way is to turn the individual LEDs (red, blue, and green) on and off in 
+  // The first way is to turn the individual LEDs (red, blue, and green) on and off in
   // various combinations. This gives you a eight colors (if you count "black"  as a color).
 	
-  // We've written a function called mainColors() that steps through all eight of these colors. 
-  // We're only "calling" the function here (telling it to run). The actual function code is 
+  // We've written a function called mainColors() that steps through all eight of these colors.
+  // We're only "calling" the function here (telling it to run). The actual function code is
   // further down in the sketch.
 
   mainColors();
-  
-  // The above function turns the individual LEDs full-on and full-off. If you want to generate 
-  // more than eight colors, you can do so by varying the brightness of the individual LEDs 
+
+  // The above function turns the individual LEDs full-on and full-off. If you want to generate
+  // more than eight colors, you can do so by varying the brightness of the individual LEDs
   // between full-on and full-off.
-  
+
   // The analogWrite() function lets us do this. This function
   // lets you dim a LED from full-off to full-on over 255 steps.
-  
-  // We've written a function called showSpectrum() that smoothly steps through all the colors. 
+
+  // We've written a function called showSpectrum() that smoothly steps through all the colors.
   // Again we're just calling it here; the actual code is further down in this sketch.
 
   showSpectrum();
@@ -79,7 +79,7 @@ void loop()
 
 // Here's the mainColors() function we've written.
 
-// This function displays the eight "main" colors that the RGB LED can produce. If you'd like 
+// This function displays the eight "main" colors that the RGB LED can produce. If you'd like
 // to use one of these colors in your own sketch, copy and paste that section into your code.
 
 void mainColors()
@@ -143,23 +143,23 @@ void mainColors()
 
 // Below are two more functions we've written, showSpectrum() and showRGB().
 
-// showRGB() displays a single color on the RGB LED. You call showRGB() with the 
+// showRGB() displays a single color on the RGB LED. You call showRGB() with the
 // number of a color you want to display.
 
-// showSpectrum() steps through all the colors of the RGB LED, displaying a rainbow. 
+// showSpectrum() steps through all the colors of the RGB LED, displaying a rainbow.
 // showSpectrum() actually calls showRGB() over and over to do this.
 
-// We'll often break tasks down into individual functions like this, which makes your 
+// We'll often break tasks down into individual functions like this, which makes your
 // sketches easier to follow, you can reuse functions in your other programs.
 
 // showSpectrum()
 
-// This function steps through all the colors of the RGB LED. It does this by 
-// stepping a variable from 0 to 768 (the total number of colors), and repeatedly 
+// This function steps through all the colors of the RGB LED. It does this by
+// stepping a variable from 0 to 768 (the total number of colors), and repeatedly
 // calling showRGB() to display the individual colors.
 
-// In this function, we're using a "for() loop" to step a variable from one value 
-// to another, and perform a set of instructions for each step. For() loops are a 
+// In this function, we're using a "for() loop" to step a variable from one value
+// to another, and perform a set of instructions for each step. For() loops are a
 // very handy way to get numbers to count up or down.
 
 // Every for() loop has three statements separated by semicolons:
@@ -179,9 +179,9 @@ void mainColors()
 void showSpectrum()
 {
   int x;  // define an integer variable called "x"
-  
-  // Now we'll use a for() loop to make x count from 0 to 767 (Note that there's 
-  // no semicolon after this line! That's because the for() loop will repeat the next 
+
+  // Now we'll use a for() loop to make x count from 0 to 767 (Note that there's
+  // no semicolon after this line! That's because the for() loop will repeat the next
   // "statement", which in this case is everything within the following brackets {} )
 
   for (x = 0; x < 768; x++)
@@ -193,8 +193,8 @@ void showSpectrum()
 
 // showRGB()
 
-// This function translates a number between 0 and 767 into a specific color on the 
-// RGB LED. If you have this number count through the whole range (0 to 767), the 
+// This function translates a number between 0 and 767 into a specific color on the
+// RGB LED. If you have this number count through the whole range (0 to 767), the
 // LED will smoothly change color through the entire spectrum.
 
 // The "base" numbers are:
@@ -203,11 +203,11 @@ void showSpectrum()
 // 511 = pure blue
 // 767 = pure red (again)
 
-// Numbers between the above colors will create blends. For example, 640 is midway 
+// Numbers between the above colors will create blends. For example, 640 is midway
 // between 512 (blue) and 767 (red). A 50/50 mix of blue and red, resulting in purple.
 
-// If you count up from 0 to 767 and pass that number to this function, the LED will 
-// smoothly fade between all the colors. (Because it starts and ends on pure red, you 
+// If you count up from 0 to 767 and pass that number to this function, the LED will
+// smoothly fade between all the colors. (Because it starts and ends on pure red, you
 // can start over at 0 without any break in the spectrum).
 
 void showRGB(int color)
@@ -216,7 +216,7 @@ void showRGB(int color)
   int greenIntensity;
   int blueIntensity;
 
-  // We'll use an "if/else" statement to determine which of the three (R,G,B) zones x falls 
+  // We'll use an "if/else" statement to determine which of the three (R,G,B) zones x falls
   // into. Each of these zones spans 255 because analogWrite() wants a number from 0 to 255.
 
   // In each zones, we'll calculate the brightness of each color within the RGB LED.

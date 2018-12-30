@@ -67,7 +67,7 @@ void checkWaveButton()
     Serial.println("Running Animation Wave with the following Parameters:");
     Serial.print("Speed:");
     Serial.println(speedLevel);
-    
+
     for(int i=0; i<6; i++)
     {
      digitalWrite(ledsPin[i], HIGH);

@@ -54,7 +54,7 @@ void displaySerialPortOnLCD()
   if (Serial.available()) {
     delay(100); // wait a bit for the entire message to arrive
     lcd.clear(); // clear the screen
-    
+
     while (Serial.available() > 0)
     { // read each character from the serial port and display it in the LCD
       lcd.write(Serial.read());
