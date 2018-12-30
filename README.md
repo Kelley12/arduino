@@ -14,6 +14,7 @@ Learning arduino with sample projects
 - keypad_test - Functions for testing and configuring a 4x4 matrix keypad
 - lcd - Functions for testing and configuring an LCD screen
 - shift_register - Functions for using a shift register to control more outputs with less pins
+- utrasonic_test - Functions for using an Ultrasonic Sensor
 
 ## Requirements
 - [Arduino](https://www.arduino.cc/en/main/software) - [Source code](https://github.com/arduino/Arduino)
